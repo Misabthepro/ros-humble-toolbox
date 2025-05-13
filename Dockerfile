@@ -4,5 +4,5 @@ FROM osrf/ros:humble-desktop-full
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    neovim
+    neovim \
     && rm -rf /var/lib/apt/lists/*
