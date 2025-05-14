@@ -1,0 +1,67 @@
+#!/bin/bash
+
+# Color definitions
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Logging functions
+log() {
+    echo -e "${BLUE}$1${NC}"
+}
+
+error() {
+    echo -e "${RED}$1${NC}"
+}
+
+success() {
+    echo -e "${GREEN}$1${NC}"
+}
+
+log "Running System Upgrade..."
+
+sudo apt update && sudo apt upgrade -y
+if [ $? -ne 0 ]; then
+    error "Error: System upgrade failed. Try connecting to the internet."
+    exit 1
+fi
+
+log "Checking for podman and newuidmap..."
+if ! command -v podman > /dev/null || ! command -v newuidmap > /dev/null; then
+    log "Installing podman and/or uidmap..."
+    sudo apt install -y podman uidmap
+    if [ $? -ne 0 ]; then
+        error "Error: Installation of podman/uidmap failed. Check your internet connection."
+        exit 1
+    fi
+fi
+
+log "Checking for Distrobox..."
+if ! command -v distrobox > /dev/null; then
+    log "Installing Distrobox..."
+    wget -qO- https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh
+    if [ $? -ne 0 ]; then
+        error "Error: Distrobox installation failed. Try again later."
+        exit 1
+    fi
+fi
+
+log "Pulling ROS image..."
+podman pull docker.io/leafantblower/ros-humble-toolbox:latest
+if [ $? -ne 0 ]; then
+    error "Error: Podman image pull failed. Please try again."
+    exit 1
+fi
+
+log "Creating Distrobox environment..."
+distrobox rm ros > /dev/null 2>&1
+distrobox create -n ros -i docker.io/leafantblower/ros-humble-toolbox:latest
+if [ $? -ne 0 ]; then
+    error "Error: Distrobox creation failed. Cleaning up..."
+    distrobox rm ros > /dev/null 2>&1
+    exit 1
+fi
+
+success "Installation complete."
+log "Run: distrobox enter ros"
