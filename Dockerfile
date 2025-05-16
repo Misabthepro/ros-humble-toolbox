@@ -14,6 +14,6 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     libnss-mdns libnss-myhostname libpipeline1 libpopt0 librsvg2-common \
     libuchardet0 libvte-2.91-common libvte-common libxmuu1 libxtables12 locales \
     lsof man-db manpages mesa-vulkan-drivers mtr pigz rsync tcpdump time \
-    traceroute tree unzip wget xauth \
+    traceroute tree unzip wget xauth nano \
     && rm -rf /var/lib/apt/lists/*
 
