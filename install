@@ -56,7 +56,7 @@ fi
 
 log "Creating Distrobox environment..."
 distrobox rm ros > /dev/null 2>&1
-distrobox create -n ros -i docker.io/leafantblower/ros-humble-toolbox:latest
+distrobox create -n ros2 --root -i docker.io/leafantblower/ros-humble-toolbox:latest
 if [ $? -ne 0 ]; then
     error "Error: Distrobox creation failed. Cleaning up..."
     distrobox rm ros > /dev/null 2>&1
@@ -64,4 +64,5 @@ if [ $? -ne 0 ]; then
 fi
 
 success "Installation complete."
-log "Run: distrobox enter ros"
+log "To Run: distrobox enter ros2 --root"
+log "Enter the same password as you use for the host system(different possible but don't forget it)"
