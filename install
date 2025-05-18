@@ -6,17 +6,16 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Logging functions
 log() {
-    echo -e "${BLUE}$1${NC}"
+    printf "${BLUE}%s${NC}\n" "$1"
 }
 
 error() {
-    echo -e "${RED}$1${NC}"
+    printf "${RED}%s${NC}\n" "$1"
 }
 
 success() {
-    echo -e "${GREEN}$1${NC}"
+    printf "${GREEN}%s${NC}\n" "$1"
 }
 
 log "Running System Upgrade..."
