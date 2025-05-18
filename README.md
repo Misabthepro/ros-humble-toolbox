@@ -11,7 +11,7 @@ For other linux distros just run the package manager commands of that distro whi
 
 ### 2. Start the distrobox container
 ```sh
-distrobox run --root ros2
+distrobox enter --root ros2
 ```
 Important: The password created during first run is the root password of the container and **not** the host. To keep things simple, it is best to set container root password the same as host password.
 
