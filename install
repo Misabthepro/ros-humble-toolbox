@@ -54,11 +54,11 @@ if [ $? -ne 0 ]; then
 fi
 
 log "Creating Distrobox environment..."
-distrobox rm ros > /dev/null 2>&1
+distrobox rm ros2 > /dev/null 2>&1
 distrobox create -n ros2 --root -i ghcr.io/misabthepro/ros-humble-toolbox:latest -p
 if [ $? -ne 0 ]; then
     error "Error: Distrobox creation failed. Cleaning up..."
-    distrobox rm ros > /dev/null 2>&1
+    distrobox rm ros2 > /dev/null 2>&1
     exit 1
 fi
 
