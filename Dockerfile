@@ -5,7 +5,8 @@ FROM ros:humble-ros-base-jammy
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-desktop=0.10.0-1* \
     ros-humble-desktop-full=0.10.0-1* \
-     && rm -rf /var/lib/apt/lists/*
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     apt-utils avahi-daemon bash-completion bc bind9-host bind9-libs \
@@ -17,4 +18,5 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     libuchardet0 libvte-2.91-common libvte-common libxmuu1 libxtables12 locales \
     lsof man-db manpages mesa-vulkan-drivers mtr pigz rsync tcpdump time \
     traceroute tree unzip wget xauth nano terminator \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
