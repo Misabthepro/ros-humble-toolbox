@@ -37,4 +37,4 @@ jobs:
           push: true
           tags: |
             leafantblower/ros-humble-toolbox:latest
-            ghcr.io/Misabthepro/ros-humble-toolbox:latest
+            ghcr.io/misabthepro/ros-humble-toolbox:latest
