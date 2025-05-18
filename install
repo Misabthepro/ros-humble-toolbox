@@ -47,7 +47,7 @@ if ! command -v distrobox > /dev/null; then
 fi
 
 log "Pulling ROS image..."
-sudo podman pull docker.io/leafantblower/ros-humble-toolbox:latest # or use this image "ghcr.io/misabthepro/ros-humble-toolbox:latest"
+sudo podman pull ghcr.io/misabthepro/ros-humble-toolbox:latest # or use this image "ghcr.io/misabthepro/ros-humble-toolbox:latest"
 if [ $? -ne 0 ]; then
     error "Error: Podman image pull failed. Please try again."
     exit 1
@@ -55,7 +55,7 @@ fi
 
 log "Creating Distrobox environment..."
 distrobox rm ros > /dev/null 2>&1
-distrobox create -n ros2 --root -i docker.io/leafantblower/ros-humble-toolbox:latest
+distrobox create -n ros2 --root -i ghcr.io/misabthepro/ros-humble-toolbox:latest
 if [ $? -ne 0 ]; then
     error "Error: Distrobox creation failed. Cleaning up..."
     distrobox rm ros > /dev/null 2>&1
