@@ -7,6 +7,7 @@ Any amd64 or arm64 Linux distribution that supports running podman.
 ```sh
 wget -qO- https://raw.githubusercontent.com/Misabthepro/ros-humble-toolbox/main/install | sh
 ```
+For other linux distros just run the package manager commands of that distro which correspond to those used in the install script and then run the rest of the commands in the script.
 
 ### 2. Start the distrobox container
 ```sh
