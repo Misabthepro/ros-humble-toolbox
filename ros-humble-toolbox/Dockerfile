@@ -10,7 +10,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     libnss-mdns libnss-myhostname libpipeline1 libpopt0 librsvg2-common \
     libuchardet0 libvte-2.91-common libvte-common libxmuu1 libxtables12 locales \
     lsof man-db manpages mesa-vulkan-drivers mtr pigz rsync tcpdump time \
-    traceroute tree unzip wget xauth nano terminator gedit gpg apt-transport-https sudo \
+    traceroute tree unzip wget xauth nano terminator gpg apt-transport-https sudo \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
