@@ -13,7 +13,7 @@ For other linux distros just run the package manager commands of that distro whi
 ## Installation on Windows(Using WSL)
 ### 1. Open windows powershell `type wt in windows run (win + r)` and run the command  ..skip if wsl installed..
 ```
-wsl --install
+wsl --install -d Ubuntu-22.04
 ```
 Do the initial setup as instructed by windows
 
