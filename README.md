@@ -10,7 +10,7 @@ wget -qO- https://raw.githubusercontent.com/Misabthepro/ros-humble-toolbox/main/
 ```
 For other linux distros just run the package manager commands of that distro which correspond to those used in the install script and then run the rest of the commands in the script.
 
-### (optional) install vscode on ubuntu
+### (optional) install vscode on ubuntu **RUN THIS IN NEW TERMINAL WINDOW OUTSIDE DISTROBOX**
 ```sh
 wget -qO- https://raw.githubusercontent.com/Misabthepro/ros-humble-toolbox/main/code | sh
 ```
