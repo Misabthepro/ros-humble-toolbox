@@ -10,6 +10,11 @@ wget -qO- https://raw.githubusercontent.com/Misabthepro/ros-humble-toolbox/main/
 ```
 For other linux distros just run the package manager commands of that distro which correspond to those used in the install script and then run the rest of the commands in the script.
 
+### (optional) install vscode on ubuntu
+```sh
+wget -qO- https://raw.githubusercontent.com/Misabthepro/ros-humble-toolbox/main/code | sh
+```
+
 ## Installation on Windows(Using WSL)
 ### 1. Open windows powershell `type wt in windows run (win + r)` and run the command  ..skip if wsl installed..
 ```
