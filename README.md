@@ -67,9 +67,6 @@ In the Ubuntu shell (inside WSL), run:
 ```sh
 wget -qO- https://raw.githubusercontent.com/Misabthepro/ros-humble-toolbox/main/install | sh
 ```
-
-> Again, if you're using a different Linux distro, install dependencies manually, then follow the rest of the script.
-
 ---
 
 ## Post Installation
