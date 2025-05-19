@@ -1,4 +1,4 @@
-name: Daily Docker Build & Push
+name: ros-humble-toolbox image build and push
 
 on:
   schedule:
@@ -36,7 +36,7 @@ jobs:
       - name: Build and push multi-arch Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./ros-humble-toolbox/
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
