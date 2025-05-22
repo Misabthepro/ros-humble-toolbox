@@ -20,7 +20,7 @@ success() {
 
 log "Running System Upgrade..."
 
-sudo apt update && sudo apt upgrade -y
+sudo apt update
 if [ $? -ne 0 ]; then
     error "Error: System upgrade failed. Try connecting to the internet."
     exit 1
