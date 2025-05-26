@@ -2,7 +2,7 @@ name: ros-humble-toolbox image build and push
 
 on:
   schedule:
-    - cron: '30 3 * * *'
+    - cron: '30 3 * * 3'
   workflow_dispatch:
 
 permissions:
